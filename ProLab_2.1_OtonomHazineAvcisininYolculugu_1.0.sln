@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0", "ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0.csproj", "{BDEA3732-D49A-46E2-BBC2-6E466EF7D31E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDEA3732-D49A-46E2-BBC2-6E466EF7D31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDEA3732-D49A-46E2-BBC2-6E466EF7D31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDEA3732-D49A-46E2-BBC2-6E466EF7D31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDEA3732-D49A-46E2-BBC2-6E466EF7D31E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E06C4799-DA4B-4154-9288-5CC207B1CC59}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,3 @@
+﻿*Obstacle sınıfı abstract çünkü sadece alt sınıflar onu kullanıyor
+*Dynamic ve StaticObstacle sınıfları Obstacle sınıfından kalıtım alıyor
+*Kodda sınıfların kullanıldığı satırları göster.
