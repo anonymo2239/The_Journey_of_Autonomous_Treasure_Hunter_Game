@@ -277,10 +277,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             pictureBoxChar.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBoxChar.BackColor = Color.Transparent;
             pictureBoxChar.Size = new Size(constantNumber * 2, constantNumber * 2);
-            for(int i = 0; i < 30; i++)
-            {
-                pictureBoxChar.BringToFront();
-            }
             panel1.Controls.Add(pictureBoxChar);
 
             PictureBox pictureBoxRed1 = new PictureBox();
@@ -436,5 +432,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 panel1.Controls.Remove(labelRed); 
             }
         }
+
     }
 }

@@ -57,7 +57,7 @@
             this.textBox1.Location = new System.Drawing.Point(27, 253);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 34);
+            this.textBox1.Size = new System.Drawing.Size(199, 29);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
@@ -65,7 +65,7 @@
             this.textBox2.Location = new System.Drawing.Point(27, 322);
             this.textBox2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 34);
+            this.textBox2.Size = new System.Drawing.Size(199, 29);
             this.textBox2.TabIndex = 4;
             // 
             // label1
@@ -76,7 +76,7 @@
             this.label1.Location = new System.Drawing.Point(114, 287);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 34);
+            this.label1.Size = new System.Drawing.Size(27, 27);
             this.label1.TabIndex = 2;
             this.label1.Text = "X";
             // 
@@ -124,7 +124,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(13, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 29);
+            this.label2.Size = new System.Drawing.Size(142, 22);
             this.label2.TabIndex = 6;
             this.label2.Text = "label2";
             this.label2.Visible = false;
@@ -148,7 +148,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(1100, 354);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 29);
+            this.label4.Size = new System.Drawing.Size(76, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "YAZ";
             // 
@@ -158,7 +158,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(13, 354);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 29);
+            this.label3.Size = new System.Drawing.Size(76, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "KIS";
             // 
@@ -167,7 +167,7 @@
             this.textBox3.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox3.Location = new System.Drawing.Point(27, 144);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 34);
+            this.textBox3.Size = new System.Drawing.Size(199, 29);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Arthur";
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
@@ -180,7 +180,7 @@
             this.label5.Font = new System.Drawing.Font("Press Start", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(5, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(310, 42);
+            this.label5.Size = new System.Drawing.Size(247, 32);
             this.label5.TabIndex = 7;
             this.label5.Text = "Karakterin Ismi\r\n  (Opsiyonel)";
             // 
@@ -190,7 +190,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(66, 228);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 29);
+            this.label6.Size = new System.Drawing.Size(120, 22);
             this.label6.TabIndex = 8;
             this.label6.Text = "Boyut";
             // 
@@ -200,7 +200,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(57, 58);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 29);
+            this.label7.Size = new System.Drawing.Size(54, 22);
             this.label7.TabIndex = 9;
             this.label7.Text = "ID";
             // 
@@ -209,7 +209,7 @@
             this.textBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox4.Location = new System.Drawing.Point(117, 55);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(54, 34);
+            this.textBox4.Size = new System.Drawing.Size(54, 29);
             this.textBox4.TabIndex = 1;
             this.textBox4.Text = "1";
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
@@ -249,7 +249,7 @@
             this.label8.Font = new System.Drawing.Font("Press Start", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 25);
+            this.label8.Size = new System.Drawing.Size(0, 21);
             this.label8.TabIndex = 12;
             this.label8.Visible = false;
             // 
@@ -270,15 +270,15 @@
             // 
             this.listBox2.Font = new System.Drawing.Font("Press Start", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 19;
+            this.listBox2.ItemHeight = 15;
             this.listBox2.Location = new System.Drawing.Point(27, 615);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(199, 175);
+            this.listBox2.Size = new System.Drawing.Size(199, 169);
             this.listBox2.TabIndex = 15;
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(27F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -305,6 +305,7 @@
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
+//            this.Load += new System.EventHandler(this.Game_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
