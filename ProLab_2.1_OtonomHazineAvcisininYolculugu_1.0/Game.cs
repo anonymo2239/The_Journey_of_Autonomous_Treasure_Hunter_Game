@@ -23,7 +23,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
         private Character character;
         private Label labelRed;
         private List<PictureBox> redPictureBoxes;
-
         private void button2_Click(object sender, EventArgs e)
         {
             GirisEkrani form = new GirisEkrani();
@@ -279,30 +278,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             pictureBoxChar.Size = new Size(constantNumber * 2, constantNumber * 2);
             panel1.Controls.Add(pictureBoxChar);
 
-            PictureBox pictureBoxRed1 = new PictureBox();
-            pictureBoxRed1.Location = new Point(character_random_x + constantNumber, character_random_y);
-            pictureBoxRed1.BackColor = Color.Red;
-            pictureBoxRed1.Size = new Size(constantNumber * 1, constantNumber * 1);
-            panel1.Controls.Add(pictureBoxRed1);
-
-            PictureBox pictureBoxRed2 = new PictureBox();
-            pictureBoxRed2.Location = new Point(character_random_x - constantNumber, character_random_y);
-            pictureBoxRed2.BackColor = Color.Red;
-            pictureBoxRed2.Size = new Size(constantNumber * 1, constantNumber * 1);
-            panel1.Controls.Add(pictureBoxRed2);
-
-            PictureBox pictureBoxRed3 = new PictureBox();
-            pictureBoxRed3.Location = new Point(character_random_x, character_random_y + constantNumber);
-            pictureBoxRed3.BackColor = Color.Red;
-            pictureBoxRed3.Size = new Size(constantNumber * 1, constantNumber * 1);
-            panel1.Controls.Add(pictureBoxRed3);
-
-            PictureBox pictureBoxRed4 = new PictureBox();
-            pictureBoxRed4.Location = new Point(character_random_x, character_random_y - constantNumber);
-            pictureBoxRed4.BackColor = Color.Red;
-            pictureBoxRed4.Size = new Size(constantNumber * 1, constantNumber * 1);
-            panel1.Controls.Add(pictureBoxRed4);
-
             labelRed = new Label();
             labelRed.Location = new Point(character_random_x - constantNumber * 3, character_random_y - constantNumber * 2 - 5);
             labelRed.Text = "Burada!";
@@ -315,18 +290,11 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
-
-            redPictureBoxes = new List<PictureBox> { pictureBoxRed1, pictureBoxRed2, pictureBoxRed3, pictureBoxRed4 };
-
             button4.Visible = true;
         }
 
         void Timer_Tick(object sender, EventArgs e)
         {
-            foreach (PictureBox pb in redPictureBoxes)
-            {
-                pb.Visible = !pb.Visible;
-            }
             labelRed.Visible = !labelRed.Visible;
         }
 
@@ -433,5 +401,9 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
