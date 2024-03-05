@@ -12,17 +12,20 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 {
     public partial class Game : Form
     {
-        public Game()
-        {
-            InitializeComponent();
-        }
-
+        static PictureBox pictureBoxChar = new PictureBox();
         private int horizontal_length = 0;
         private int vertical_length = 0;
         private int constantNumber = 10;
-        private Character character;
         private Label labelRed;
+        static Character character;
         private List<PictureBox> redPictureBoxes;
+
+        public Game()
+        {
+            InitializeComponent();
+            character = new Character("resimler/karakter.png", "resimler/karli_karakter.png", Convert.ToInt32(textBox4.Text), textBox3.Text);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             GirisEkrani form = new GirisEkrani();
@@ -266,8 +269,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             character_random_x -= character_random_x % constantNumber;
             character_random_y -= character_random_y % constantNumber;
 
-            character = new Character("resimler/karakter.png", "resimler/karli_karakter.png", Convert.ToInt32(textBox4.Text), textBox3.Text);
-            PictureBox pictureBoxChar = new PictureBox();
             pictureBoxChar.Location = new Point(character_random_x, character_random_y);
             if (character_random_x < 600)
                 pictureBoxChar.BackgroundImage = Image.FromFile(character.WinterObjectName);
@@ -379,7 +380,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
         private void button5_Click(object sender, EventArgs e)
         {
-            character = new Character("karakter.png", "karli_karakter.png", Convert.ToInt32(textBox4.Text), textBox3.Text);
             button5.Text = "Kaydedildi!";
             button5.Font = new Font("Press Start", 12);
             textBox3.ForeColor = Color.Black;
@@ -397,7 +397,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             foreach (PictureBox pb in redPictureBoxes)
             {
                 panel1.Controls.Remove(pb);
-                panel1.Controls.Remove(labelRed); 
             }
         }
 
