@@ -21,6 +21,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
         static int mute = 0;
         private SoundPlayer player1;
         private SoundPlayer player2;
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {

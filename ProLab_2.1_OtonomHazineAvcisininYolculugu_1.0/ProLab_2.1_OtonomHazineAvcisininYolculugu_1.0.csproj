@@ -185,6 +185,12 @@
     <Content Include="resimler\mute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="resimler\smoke.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resimler\smoke2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resimler\speaker2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -18,8 +18,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
         private int vertical_length = 0;
         public int constantNumber = 10;
         private Label labelRed;
-        private List<PictureBox> redPictureBoxes;
-        
 
         public Game()
         {
@@ -60,7 +58,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
             wallStatic.ObjectSize = 10;
 
-            int numberofobject = random.Next(22, 27);
+            int numberofobject = random.Next(24, 29);
             int halfWidth = panel1.Width / 2;
 
             string[] summer_objects = { treeStatic.SummerObjectName, rockStatic.SummerObjectName,
@@ -75,7 +73,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
             List<PictureBox> redPictureBoxes = new List<PictureBox>();
 
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < 3; j++)
             {
                 int x_random, y_random;
                 PictureBox pictureBoxBee = new PictureBox();
@@ -95,7 +93,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 {
                     pictureBoxBee.BackgroundImage = Image.FromFile("resimler/ari.png");
                 }
-                pictureBoxBee.Size = new Size(constantNumber * 1, constantNumber * 1);
+                pictureBoxBee.Size = new Size(constantNumber * 2, constantNumber * 2);
                 pictureBoxBee.BringToFront();
                 panel1.Controls.Add(pictureBoxBee);
 
@@ -104,7 +102,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                     PictureBox pictureboxbirdred = new PictureBox();
                     pictureboxbirdred.Location = new Point(x_random + ((k + 1) * constantNumber), y_random);
                     pictureboxbirdred.BackColor = Color.Red;
-                    pictureboxbirdred.Size = new Size(constantNumber * 1, constantNumber * 1);
+                    pictureboxbirdred.Size = new Size(constantNumber * 2, constantNumber * 2);
                     panel1.Controls.Add(pictureboxbirdred);
                     redPictureBoxes.Add(pictureboxbirdred);
                 }
@@ -126,7 +124,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                     pictureBoxBird.BackgroundImage = Image.FromFile("resimler/kus.png");
                 }
                 pictureBoxBird.BackgroundImage = Image.FromFile("resimler/karli_kus.png");
-                pictureBoxBird.Size = new Size(constantNumber * 1, constantNumber * 1);
+                pictureBoxBird.Size = new Size(constantNumber * 2, constantNumber * 2);
                 pictureBoxBird.BringToFront();
                 panel1.Controls.Add(pictureBoxBird);
 
@@ -134,7 +132,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 {
                     PictureBox pictureboxbeered = new PictureBox();
                     pictureboxbeered.Location = new Point(x_random, y_random + ((t + 1) * constantNumber));
-                    pictureboxbeered.Size = new Size(constantNumber * 1, constantNumber * 1);
+                    pictureboxbeered.Size = new Size(constantNumber * 2, constantNumber * 2);
                     pictureboxbeered.BackColor = Color.Red;
                     panel1.Controls.Add(pictureboxbeered);
                     redPictureBoxes.Add(pictureboxbeered);
@@ -235,7 +233,8 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 {
                     pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                     pictureBox.Size = new Size(constantNumber * 15, constantNumber * 15);
-                    pictureBox.Location = new Point(x_random, y_random);
+                    if(winter_objects[object_no] == mountainStatic.WinterObjectName)
+                        pictureBox.Location = new Point(x_random - constantNumber * 15, y_random);
                     pictureBox.SendToBack();
                 }
                 else if (winter_objects[object_no] == wallStatic.WinterObjectName || summer_objects[object_no] == wallStatic.SummerObjectName)

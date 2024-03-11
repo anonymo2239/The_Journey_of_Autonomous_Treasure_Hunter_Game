@@ -80,3 +80,5 @@ C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure
 C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure_Hunter_Game\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\obj\Debug\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0.csproj.CoreCompileInputs.cache
 C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure_Hunter_Game\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\obj\Debug\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0.exe
 C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure_Hunter_Game\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\obj\Debug\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0.pdb
+C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure_Hunter_Game\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\bin\Debug\resimler\smoke.jpeg
+C:\Users\Alperen Arda\OneDrive\Desktop\GitHub\The_Journey_of_Autonomous_Treasure_Hunter_Game\ProLab_2.1_OtonomHazineAvcisininYolculugu_1.0\bin\Debug\resimler\smoke2.png

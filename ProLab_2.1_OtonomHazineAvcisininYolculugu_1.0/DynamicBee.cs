@@ -32,11 +32,11 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             }
             else
             {
-                if (tickCount < howManySteps)
+                if (tickCount < 3)
                 {
                     pictureBoxBee.Left += moveDistance;
                 }
-                else if (tickCount < (howManySteps * 2) - 1)
+                else if (tickCount < 5)
                 {
                     pictureBoxBee.Left -= moveDistance;
                 }
