@@ -33,9 +33,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.back_button = new System.Windows.Forms.Button();
+            this.create_map_button = new System.Windows.Forms.Button();
+            this.random_map_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,10 +45,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.start_button = new System.Windows.Forms.Button();
+            this.save_button = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.replay_button = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -82,43 +82,43 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "X";
             // 
-            // button2
+            // back_button
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSalmon;
-            this.button2.Location = new System.Drawing.Point(27, 794);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 51);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Geri";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.back_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.back_button.Location = new System.Drawing.Point(27, 794);
+            this.back_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.back_button.Name = "back_button";
+            this.back_button.Size = new System.Drawing.Size(160, 51);
+            this.back_button.TabIndex = 5;
+            this.back_button.Text = "Geri";
+            this.back_button.UseVisualStyleBackColor = false;
+            this.back_button.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // create_map_button
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSalmon;
-            this.button1.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(27, 368);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 51);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Harita Olustur";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.create_map_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.create_map_button.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.create_map_button.Location = new System.Drawing.Point(27, 368);
+            this.create_map_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.create_map_button.Name = "create_map_button";
+            this.create_map_button.Size = new System.Drawing.Size(199, 51);
+            this.create_map_button.TabIndex = 5;
+            this.create_map_button.Text = "Harita Olustur";
+            this.create_map_button.UseVisualStyleBackColor = false;
+            this.create_map_button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // random_map_button
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSalmon;
-            this.button3.Font = new System.Drawing.Font("Press Start", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(27, 425);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 63);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Rastgele Yeni Harita Olustur";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.random_map_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.random_map_button.Font = new System.Drawing.Font("Press Start", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.random_map_button.Location = new System.Drawing.Point(27, 425);
+            this.random_map_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.random_map_button.Name = "random_map_button";
+            this.random_map_button.Size = new System.Drawing.Size(199, 63);
+            this.random_map_button.TabIndex = 6;
+            this.random_map_button.Text = "Rastgele Yeni Harita Olustur";
+            this.random_map_button.UseVisualStyleBackColor = false;
+            this.random_map_button.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -217,32 +217,32 @@
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
             this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
-            // button4
+            // start_button
             // 
-            this.button4.BackColor = System.Drawing.Color.LightSalmon;
-            this.button4.Font = new System.Drawing.Font("Press Start", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(27, 494);
-            this.button4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 51);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Baslat";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.start_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.start_button.Font = new System.Drawing.Font("Press Start", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.start_button.Location = new System.Drawing.Point(27, 494);
+            this.start_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.start_button.Name = "start_button";
+            this.start_button.Size = new System.Drawing.Size(199, 51);
+            this.start_button.TabIndex = 10;
+            this.start_button.Text = "Baslat";
+            this.start_button.UseVisualStyleBackColor = false;
+            this.start_button.Visible = false;
+            this.start_button.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // save_button
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSalmon;
-            this.button5.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(27, 179);
-            this.button5.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(199, 41);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Kaydet";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.save_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.save_button.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_button.Location = new System.Drawing.Point(27, 179);
+            this.save_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(199, 41);
+            this.save_button.TabIndex = 11;
+            this.save_button.Text = "Kaydet";
+            this.save_button.UseVisualStyleBackColor = false;
+            this.save_button.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
@@ -255,18 +255,18 @@
             this.label8.TabIndex = 12;
             this.label8.Visible = false;
             // 
-            // button6
+            // replay_button
             // 
-            this.button6.BackColor = System.Drawing.Color.LightSalmon;
-            this.button6.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(27, 551);
-            this.button6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(199, 51);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Yeniden Baslat";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Visible = false;
+            this.replay_button.BackColor = System.Drawing.Color.LightSalmon;
+            this.replay_button.Font = new System.Drawing.Font("Press Start", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.replay_button.Location = new System.Drawing.Point(27, 551);
+            this.replay_button.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.replay_button.Name = "replay_button";
+            this.replay_button.Size = new System.Drawing.Size(199, 51);
+            this.replay_button.TabIndex = 13;
+            this.replay_button.Text = "Yeniden Baslat";
+            this.replay_button.UseVisualStyleBackColor = false;
+            this.replay_button.Visible = false;
             // 
             // listBox2
             // 
@@ -280,7 +280,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Game
@@ -291,17 +290,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1465, 918);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.replay_button);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.save_button);
+            this.Controls.Add(this.start_button);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.random_map_button);
+            this.Controls.Add(this.create_map_button);
+            this.Controls.Add(this.back_button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -324,9 +323,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button back_button;
+        private System.Windows.Forms.Button create_map_button;
+        private System.Windows.Forms.Button random_map_button;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
@@ -336,11 +335,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button start_button;
+        private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button replay_button;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Timer timer1;
     }
 }

@@ -13,17 +13,24 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
     public partial class Game : Form
     {
         static PictureBox pictureBoxChar = new PictureBox();
+        public PictureBox pictureBoxBee = new PictureBox();
+        public PictureBox pictureBoxBird = new PictureBox();
+        static DynamicObstacle beeDynamic;
+        static DynamicObstacle birdDynamic;
+        static Character character;
         private int horizontal_length = 0;
         private int vertical_length = 0;
         private int constantNumber = 10;
         private Label labelRed;
-        static Character character;
         private List<PictureBox> redPictureBoxes;
+        private int tickCount = 0;
 
         public Game()
         {
             InitializeComponent();
             character = new Character("resimler/karakter.png", "resimler/karli_karakter.png", Convert.ToInt32(textBox4.Text), textBox3.Text);
+            beeDynamic = new DynamicObstacle("resimler/ari.png", "resimler/karli_ari.png", 3);
+            birdDynamic = new DynamicObstacle("resimler/kus.png", "resimler/karli_kus.png", 5);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,26 +63,69 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             StaticObstacle rockStatic = new StaticObstacle("resimler/kaya.png", "resimler/karli_kaya.png", true);
             StaticObstacle mountainStatic = new StaticObstacle("resimler/dag.png", "resimler/karli_dag.png", true);
             StaticObstacle wallStatic = new StaticObstacle("resimler/duvar.jpeg", "resimler/karli_duvar.jpg", true);
-            DynamicObstacle beeDynamic = new DynamicObstacle("resimler/ari.png", "resimler/karli_ari.png", 3);
-            DynamicObstacle birdDynamic = new DynamicObstacle("resimler/kus.png", "resimler/karli_kus.png", 5);
 
-            beeDynamic.ObjectSize = 2;
-            birdDynamic.ObjectSize = 2;
             wallStatic.ObjectSize = 10;
 
-            int numberofobject = random.Next(30, 35);
+            int numberofobject = random.Next(20, 25);
             int halfWidth = panel1.Width / 2;
 
-            string[] summer_objects = { treeStatic.SummerObjectName, rockStatic.SummerObjectName, 
-                mountainStatic.SummerObjectName, wallStatic.SummerObjectName, beeDynamic.SummerObjectName, birdDynamic.SummerObjectName };
+            string[] summer_objects = { treeStatic.SummerObjectName, rockStatic.SummerObjectName,
+                mountainStatic.SummerObjectName, wallStatic.SummerObjectName };
             string[] winter_objects = { treeStatic.WinterObjectName, rockStatic.WinterObjectName,
-                mountainStatic.WinterObjectName, wallStatic.WinterObjectName, beeDynamic. WinterObjectName, birdDynamic.WinterObjectName };
+                mountainStatic.WinterObjectName, wallStatic.WinterObjectName };
 
             List<Rectangle> placedRectangles = new List<Rectangle>();
 
             int mountainCount = 0;
             int wallCount = 0;
 
+            for (int j = 0; j < 5; j++)
+            {
+                PictureBox pictureBoxBee = new PictureBox();
+                PictureBox pictureBoxBird = new PictureBox();
+
+                int x_random, y_random;
+                x_random = random.Next(halfWidth - horizontal_length / 2, halfWidth + (horizontal_length / 2) - constantNumber * 5);
+                y_random = random.Next(0, vertical_length - constantNumber * 8);
+                x_random -= x_random % constantNumber;
+                y_random -= y_random % constantNumber;
+
+                pictureBoxBee.Location = new Point(x_random, y_random);
+                pictureBoxBee.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBoxBee.BackColor = Color.Transparent;
+                if (x_random < 600)
+                {
+                    pictureBoxBee.BackgroundImage = Image.FromFile("resimler/karli_ari.png");
+                }
+                else
+                {
+                    pictureBoxBee.BackgroundImage = Image.FromFile("resimler/ari.png");
+                }
+                
+                pictureBoxBee.Size = new Size(constantNumber * 1, constantNumber * 1);
+
+                x_random = random.Next(halfWidth - horizontal_length / 2, halfWidth + (horizontal_length / 2) - constantNumber * 5);
+                y_random = random.Next(0, vertical_length - constantNumber * 8);
+                x_random -= x_random % constantNumber;
+                y_random -= y_random % constantNumber;
+                pictureBoxBird.Location = new Point(x_random, y_random);
+                pictureBoxBird.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBoxBird.BackColor = Color.Transparent;
+                if (x_random < 600)
+                {
+                    pictureBoxBird.BackgroundImage = Image.FromFile("resimler/karli_kus.png");
+                }
+                else
+                {
+                    pictureBoxBird.BackgroundImage = Image.FromFile("resimler/kus.png");
+                }
+                pictureBoxBird.BackgroundImage = Image.FromFile("resimler/karli_kus.png");
+                pictureBoxBird.Size = new Size(constantNumber * 1, constantNumber * 1);
+
+                panel1.Controls.Add(pictureBoxBee);
+                panel1.Controls.Add(pictureBoxBird);
+
+            }
             for (int i = 0; i < numberofobject; i++)
             {
                 int x_random, y_random;
@@ -153,34 +203,28 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                     pictureBox.BackgroundImage = Image.FromFile(summer_objects[object_no]);
                 }
 
-                if (winter_objects[object_no] == treeStatic.WinterObjectName || winter_objects[object_no] == treeStatic.SummerObjectName)
+                if (winter_objects[object_no] == treeStatic.WinterObjectName || summer_objects[object_no] == treeStatic.SummerObjectName)
                 {
                     pictureBox.Size = new Size(constantNumber * treeStatic.ObjectSize, constantNumber * treeStatic.ObjectSize);
+                    pictureBox.Location = new Point(x_random - treeStatic.ObjectSize, y_random);
                 }
-                else if (winter_objects[object_no] == rockStatic.WinterObjectName || winter_objects[object_no] == rockStatic.SummerObjectName)
+                else if (winter_objects[object_no] == rockStatic.WinterObjectName || summer_objects[object_no] == rockStatic.SummerObjectName)
                 {
                     pictureBox.Size = new Size(constantNumber * rockStatic.ObjectSize, constantNumber * rockStatic.ObjectSize);
+                    pictureBox.Location = new Point(x_random - rockStatic.ObjectSize, y_random);
                 }
-                else if (winter_objects[object_no] == mountainStatic.WinterObjectName || winter_objects[object_no] == mountainStatic.SummerObjectName)
+                else if (winter_objects[object_no] == mountainStatic.WinterObjectName || summer_objects[object_no] == mountainStatic.SummerObjectName)
                 {
                     pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                     pictureBox.Size = new Size(constantNumber * 15, constantNumber * 15);
+                    pictureBox.Location = new Point(x_random, y_random);
                     pictureBox.SendToBack();
                 }
-                else if (winter_objects[object_no] == wallStatic.WinterObjectName || winter_objects[object_no] == wallStatic.SummerObjectName)
+                else if (winter_objects[object_no] == wallStatic.WinterObjectName || summer_objects[object_no] == wallStatic.SummerObjectName)
                 {
                     pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                    pictureBox.Location = new Point(x_random, y_random);
                     pictureBox.Size = new Size(constantNumber * wallStatic.ObjectSize, constantNumber * 1);
-                }
-                else if (winter_objects[object_no] == beeDynamic.WinterObjectName || winter_objects[object_no] == beeDynamic.SummerObjectName)
-                {
-                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-                    pictureBox.Size = new Size(constantNumber * beeDynamic.ObjectSize, constantNumber * beeDynamic.ObjectSize);
-                }
-                else if (winter_objects[object_no] == birdDynamic.WinterObjectName || winter_objects[object_no] == birdDynamic.SummerObjectName)
-                {
-                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-                    pictureBox.Size = new Size(constantNumber * birdDynamic.ObjectSize, constantNumber * birdDynamic.ObjectSize);
                 }
 
                 panel1.Controls.Add(pictureBox);
@@ -291,12 +335,30 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
-            button4.Visible = true;
+            start_button.Visible = true;
         }
 
         void Timer_Tick(object sender, EventArgs e)
         {
             labelRed.Visible = !labelRed.Visible;
+            const int moveDistance = 10;
+
+            if (tickCount < 3)
+            {
+                pictureBoxBee.Left += moveDistance;
+                pictureBoxBird.Left += moveDistance;
+            }
+            else if (tickCount < 5)
+            {
+                pictureBoxBee.Left -= moveDistance;
+                pictureBoxBird.Left += moveDistance;
+            }
+            else
+            {
+                tickCount = 0;
+            }
+
+            tickCount++;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -339,7 +401,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             vertical_length -= vertical_length % constantNumber;
             textBox2.Text = vertical_length.ToString();
             button1_Click(sender, e);
-            button4.Visible = true;
+            start_button.Visible = true;
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
@@ -354,7 +416,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 textBox3.Text = "Arthur";
                 textBox3.ForeColor = SystemColors.ScrollBar;
             }
-            else if(!string.IsNullOrWhiteSpace(textBox3.Text))
+            else if (!string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 textBox3.ForeColor = Color.Black;
             }
@@ -380,8 +442,8 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
         private void button5_Click(object sender, EventArgs e)
         {
-            button5.Text = "Kaydedildi!";
-            button5.Font = new Font("Press Start", 12);
+            save_button.Text = "Kaydedildi!";
+            save_button.Font = new Font("Press Start", 12);
             textBox3.ForeColor = Color.Black;
             textBox4.ForeColor = Color.Black;
             label8.Text = character.Name + "'un\n  yolculugu";
@@ -394,15 +456,29 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
-            foreach (PictureBox pb in redPictureBoxes)
-            {
-                panel1.Controls.Remove(pb);
-            }
+            timer1.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            const int moveDistance = 10;
+
+            if (tickCount < 3)
+            {
+                pictureBoxBee.Left += moveDistance;
+                pictureBoxBird.Left += moveDistance;
+            }
+            else if (tickCount < 5)
+            {
+                pictureBoxBee.Left -= moveDistance;
+                pictureBoxBird.Left += moveDistance;
+            }
+            else
+            {
+                tickCount = 0;
+            }
+
+            tickCount++;
         }
     }
 }
