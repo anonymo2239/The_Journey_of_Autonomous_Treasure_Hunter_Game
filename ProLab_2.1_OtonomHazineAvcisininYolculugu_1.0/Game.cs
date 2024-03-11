@@ -13,24 +13,18 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
     public partial class Game : Form
     {
         static PictureBox pictureBoxChar = new PictureBox();
-        public PictureBox pictureBoxBee = new PictureBox();
-        public PictureBox pictureBoxBird = new PictureBox();
-        static DynamicObstacle beeDynamic;
-        static DynamicObstacle birdDynamic;
         static Character character;
         private int horizontal_length = 0;
         private int vertical_length = 0;
-        private int constantNumber = 10;
+        public int constantNumber = 10;
         private Label labelRed;
         private List<PictureBox> redPictureBoxes;
-        private int tickCount = 0;
+        
 
         public Game()
         {
             InitializeComponent();
             character = new Character("resimler/karakter.png", "resimler/karli_karakter.png", Convert.ToInt32(textBox4.Text), textBox3.Text);
-            beeDynamic = new DynamicObstacle("resimler/ari.png", "resimler/karli_ari.png", 3);
-            birdDynamic = new DynamicObstacle("resimler/kus.png", "resimler/karli_kus.png", 5);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,7 +60,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
             wallStatic.ObjectSize = 10;
 
-            int numberofobject = random.Next(20, 25);
+            int numberofobject = random.Next(22, 27);
             int halfWidth = panel1.Width / 2;
 
             string[] summer_objects = { treeStatic.SummerObjectName, rockStatic.SummerObjectName,
@@ -79,12 +73,12 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             int mountainCount = 0;
             int wallCount = 0;
 
-            for (int j = 0; j < 5; j++)
-            {
-                PictureBox pictureBoxBee = new PictureBox();
-                PictureBox pictureBoxBird = new PictureBox();
+            List<PictureBox> redPictureBoxes = new List<PictureBox>();
 
+            for (int j = 0; j < 4; j++)
+            {
                 int x_random, y_random;
+                PictureBox pictureBoxBee = new PictureBox();
                 x_random = random.Next(halfWidth - horizontal_length / 2, halfWidth + (horizontal_length / 2) - constantNumber * 5);
                 y_random = random.Next(0, vertical_length - constantNumber * 8);
                 x_random -= x_random % constantNumber;
@@ -92,7 +86,7 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
 
                 pictureBoxBee.Location = new Point(x_random, y_random);
                 pictureBoxBee.BackgroundImageLayout = ImageLayout.Stretch;
-                pictureBoxBee.BackColor = Color.Transparent;
+                pictureBoxBee.BackColor = Color.Red;
                 if (x_random < 600)
                 {
                     pictureBoxBee.BackgroundImage = Image.FromFile("resimler/karli_ari.png");
@@ -101,16 +95,28 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 {
                     pictureBoxBee.BackgroundImage = Image.FromFile("resimler/ari.png");
                 }
-                
                 pictureBoxBee.Size = new Size(constantNumber * 1, constantNumber * 1);
+                pictureBoxBee.BringToFront();
+                panel1.Controls.Add(pictureBoxBee);
 
+                for (int k = 0; k < 3; k++)
+                {
+                    PictureBox pictureboxbirdred = new PictureBox();
+                    pictureboxbirdred.Location = new Point(x_random + ((k + 1) * constantNumber), y_random);
+                    pictureboxbirdred.BackColor = Color.Red;
+                    pictureboxbirdred.Size = new Size(constantNumber * 1, constantNumber * 1);
+                    panel1.Controls.Add(pictureboxbirdred);
+                    redPictureBoxes.Add(pictureboxbirdred);
+                }
+
+                PictureBox pictureBoxBird = new PictureBox();
                 x_random = random.Next(halfWidth - horizontal_length / 2, halfWidth + (horizontal_length / 2) - constantNumber * 5);
                 y_random = random.Next(0, vertical_length - constantNumber * 8);
                 x_random -= x_random % constantNumber;
                 y_random -= y_random % constantNumber;
                 pictureBoxBird.Location = new Point(x_random, y_random);
                 pictureBoxBird.BackgroundImageLayout = ImageLayout.Stretch;
-                pictureBoxBird.BackColor = Color.Transparent;
+                pictureBoxBird.BackColor = Color.Red;
                 if (x_random < 600)
                 {
                     pictureBoxBird.BackgroundImage = Image.FromFile("resimler/karli_kus.png");
@@ -121,11 +127,23 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
                 }
                 pictureBoxBird.BackgroundImage = Image.FromFile("resimler/karli_kus.png");
                 pictureBoxBird.Size = new Size(constantNumber * 1, constantNumber * 1);
-
-                panel1.Controls.Add(pictureBoxBee);
+                pictureBoxBird.BringToFront();
                 panel1.Controls.Add(pictureBoxBird);
 
+                for (int t = 0; t < 5; t++)
+                {
+                    PictureBox pictureboxbeered = new PictureBox();
+                    pictureboxbeered.Location = new Point(x_random, y_random + ((t + 1) * constantNumber));
+                    pictureboxbeered.Size = new Size(constantNumber * 1, constantNumber * 1);
+                    pictureboxbeered.BackColor = Color.Red;
+                    panel1.Controls.Add(pictureboxbeered);
+                    redPictureBoxes.Add(pictureboxbeered);
+                }
+
+                DynamicBee dynamicBee = new DynamicBee("resimler/karli_ari.png", "resimler/ari.png", 3, pictureBoxBee);
+                DynamicBird dynamicBird = new DynamicBird("resimler/karli_kus.png", "resimler/kus.png", 5, pictureBoxBird);
             }
+
             for (int i = 0; i < numberofobject; i++)
             {
                 int x_random, y_random;
@@ -338,28 +356,6 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             start_button.Visible = true;
         }
 
-        void Timer_Tick(object sender, EventArgs e)
-        {
-            labelRed.Visible = !labelRed.Visible;
-            const int moveDistance = 10;
-
-            if (tickCount < 3)
-            {
-                pictureBoxBee.Left += moveDistance;
-                pictureBoxBird.Left += moveDistance;
-            }
-            else if (tickCount < 5)
-            {
-                pictureBoxBee.Left -= moveDistance;
-                pictureBoxBird.Left += moveDistance;
-            }
-            else
-            {
-                tickCount = 0;
-            }
-
-            tickCount++;
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -457,28 +453,12 @@ namespace ProLab_2._1_OtonomHazineAvcisininYolculugu_1._0
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             timer1.Enabled = true;
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
-            const int moveDistance = 10;
-
-            if (tickCount < 3)
-            {
-                pictureBoxBee.Left += moveDistance;
-                pictureBoxBird.Left += moveDistance;
-            }
-            else if (tickCount < 5)
-            {
-                pictureBoxBee.Left -= moveDistance;
-                pictureBoxBird.Left += moveDistance;
-            }
-            else
-            {
-                tickCount = 0;
-            }
-
-            tickCount++;
+            labelRed.Visible = !labelRed.Visible;
         }
     }
 }
